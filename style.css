@@ -1,0 +1,275 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 18px;
+    width: 420px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.7s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.converter-box {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input-group label,
+.currency-group label {
+    font-weight: 600;
+    color: #444;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    font-size: 16px;
+}
+
+.currency-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+button {
+    padding: 14px;
+    background: #4e54c8;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #3a3fad;
+}
+
+.result {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Неоновые фоновые круги */
+.glow-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(128,0,255,0.7), transparent 70%);
+  filter: blur(80px);
+  animation: float 6s infinite alternate ease-in-out;
+  z-index: -1;
+}
+.glow-bg:nth-child(2) {
+  background: radial-gradient(circle, rgba(0,200,255,0.7), transparent 70%);
+  animation-delay: 1.8s;
+}
+
+@keyframes float {
+  0% { transform: translate(-120px, -80px); }
+  100% { transform: translate(120px, 80px); }
+}
+
+.container {
+  backdrop-filter: blur(20px) brightness(1.15);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 30px 35px;
+  border-radius: 20px;
+  width: 420px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  animation: fade 0.8s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.converter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  font-weight: 600;
+  color: #ddd;
+  font-size: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  outline: 1px solid rgba(255,255,255,0.2);
+  transition: 0.25s;
+}
+
+input:focus, select:focus {
+  outline: 1px solid #9b4dff;
+  background: rgba(255,255,255,0.18);
+}
+
+.currency-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+button {
+  padding: 14px;
+  background: linear-gradient(135deg, #7b2fff, #00d4ff);
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+.result {
+  background: rgba(255,255,255,0.12);
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #fff;
+}
+
+select option {
+    background: rgba(20,20,20,0.95);
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* ---------- Телефоны < 480px ---------- */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  input, select {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .currency-group {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Малые планшеты 481–768px ---------- */
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Планшеты и ноутбуки 769–1200px ---------- */
+@media (max-width: 1200px) {
+  .container {
+    width: 450px;
+  }
+}
+
+/* ---------- Большие мониторы 1400px+ ---------- */
+@media (min-width: 1400px) {
+  .container {
+    transform: scale(1.1);
+  }
+}

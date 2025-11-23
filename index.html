@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конвертер валют — Modern</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="glow-bg"></div>
+<div class="glow-bg"></div>
+
+<div class="container">
+    <h1>Конвертер валют</h1>
+
+    <div class="converter-box">
+        <div class="input-group">
+            <label>Сумма</label>
+            <input type="number" id="amount" value="1" min="0" />
+        </div>
+
+        <div class="currency-group">
+            <div>
+                <label>Из</label>
+                <select id="from"></select>
+            </div>
+            <div>
+                <label>В</label>
+                <select id="to"></select>
+            </div>
+        </div>
+
+        <button id="convertBtn">Конвертировать</button>
+
+        <div class="result" id="result">Введите данные...</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
